@@ -13,6 +13,10 @@ buildscript {
     }
 }
 
+plugins {
+    id "org.flywaydb.flyway" version "4.0.3"
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'maven'
@@ -33,5 +37,8 @@ configurations {
 dependencies {
     runtime('mysql:mysql-connector-java')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.flywaydb:flyway-core:4.0.3')
+//    compile 'org.springframework.data:spring-data-jpa:2.0.6.RELEASE'
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
